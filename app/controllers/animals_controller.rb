@@ -10,6 +10,9 @@ class AnimalsController < ApplicationController
   # GET /animals/1
   # GET /animals/1.json
   def show
+    @animals_for_select = Animal.all.map do |animal|
+      [animal.name, animal.id]
+    end
   end
 
   # GET /animals/new
